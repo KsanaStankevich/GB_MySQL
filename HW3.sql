@@ -89,4 +89,7 @@ VALUES
 SELECT * FROM Class ORDER BY Salary;
 SELECT * FROM Class ORDER BY Salary DESC;
 SELECT * FROM Class ORDER BY Salary DESC limit 5;
-SELECT * FROM Class WHERE Sum(Salary) > 100000 GROUP BY Speciality;
+SELECT Speciality, Sum(Salary) FROM Class GROUP BY Speciality;
+SELECT COUNT(*) FROM Class WHERE (AGE >= '28' AND AGE <= '42') AND Speciality = 'Рабочий';
+SELECT COUNT(DISTINCT Speciality) FROM Class;
+SELECT Speciality, AVG(AGE) FROM Class GROUP BY Speciality HAVING AVG(AGE) < 44;
